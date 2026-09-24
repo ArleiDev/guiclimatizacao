@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gui Climatização | Ar-Condicionado, Higienização e Câmaras Frias</title>
+  <meta name="description" content="Especialista em instalação, manutenção e higienização de ar-condicionado e câmaras frias. Atendimento ágil em Ibipitanga e Região & Primavera do Leste - MT. Agende pelo WhatsApp!">
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#0066cc',
+              blueDark: '#0a2540',
+              blueDeep: '#06182c',
+              blueLight: '#f0f7ff',
+              orange: '#ff6a00',
+              orangeHover: '#e65c00',
+              orangeLight: '#fff5eb'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            heading: ['Outfit', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-white text-slate-800 antialiased selection:bg-[#0066cc] selection:text-white">
+
+  <!-- Top Announcement Bar (100% White with High Contrast Dark Blue Text) -->
+  <div class="bg-white border-b border-slate-200 text-xs sm:text-sm py-2 px-4">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-50 text-[#0066cc] font-extrabold text-[11px] border border-blue-200">
+          <i data-lucide="snowflake" class="w-3.5 h-3.5 text-[#0066cc]"></i>
+          Especialista em Climatização
+        </span>
+        <span class="hidden md:inline text-slate-300">•</span>
+        <span class="hidden md:inline text-[#0a2540] font-medium">
+          Atendimento em <strong>Ibipitanga e Região</strong> &amp; <strong>Primavera do Leste - MT</strong>
+        </span>
+      </div>
+
+      <div class="flex items-center gap-4 ml-auto text-xs">
+        <span class="hidden sm:inline-flex items-center gap-1 text-slate-600 font-medium">
+          <i data-lucide="clock" class="w-3.5 h-3.5 text-[#0066cc]"></i>
+          Segunda a Sábado
+        </span>
+        <a href="https://wa.me/5577991573470" target="_blank" class="inline-flex items-center gap-1.5 text-[#ff6a00] font-black hover:underline">
+          <i data-lucide="phone-call" class="w-3.5 h-3.5"></i>
+          <span>(77) 99157-3470</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navigation (100% Solid White - Never Transparent on Scroll) -->
+  <header class="sticky top-0 z-50 navbar-solid-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 shrink-0">
+        <img src="assets/images/logo.png" alt="Gui Climatização" class="nav-logo-img" style="height: 50px; max-height: 50px; width: auto;">
+      </a>
+
+      <!-- Desktop Nav Links (No wrapping, clean spacing) -->
+      <nav class="hidden lg:flex items-center gap-5 xl:gap-7">
+        <a href="#inicio" class="nav-menu-link">Início</a>
+        <a href="#servicos" class="nav-menu-link">Serviços</a>
+        <a href="#camaras-frias" class="nav-menu-link">
+          <span>Câmaras Frias</span>
+          <span class="text-[10px] uppercase font-extrabold bg-blue-50 text-[#0066cc] px-1.5 py-0.5 rounded-full border border-blue-200">Agro</span>
+        </a>
+        <a href="#higienizacao" class="nav-menu-link">Higienização</a>
+        <a href="#calculadora" class="nav-menu-link">Calculadora BTUs</a>
+        <a href="#depoimentos" class="nav-menu-link">Depoimentos</a>
+        <a href="#localizacao" class="nav-menu-link">Onde Estamos</a>
+      </nav>
+
+      <!-- Action Buttons (Orange CTAs) -->
+      <div class="hidden sm:flex items-center gap-3 shrink-0">
+        <a href="#agendamento" class="px-4 py-2.5 rounded-xl border-2 border-[#0066cc] text-[#0066cc] hover:bg-blue-50 font-black text-xs transition-colors whitespace-nowrap">
+          Agendamento Online
+        </a>
+        <a href="https://wa.me/5577991573470?text=Ol%C3%A1%2C%20Gui%20Climatiza%C3%A7%C3%A3o!%20Gostaria%20de%20um%20or%C3%A7amento." target="_blank"
+           class="px-5 py-2.5 rounded-xl btn-orange text-xs shadow-md whitespace-nowrap">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>Falar no WhatsApp</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="lg:hidden p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-[#0a2540]" aria-label="Abrir Menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-menu" class="fixed inset-0 z-50 bg-white/98 backdrop-blur-xl transform translate-x-full transition-transform duration-300 lg:hidden flex flex-col p-6 shadow-2xl">
+    <div class="flex items-center justify-between pb-6 border-b border-slate-200">
+      <img src="assets/images/logo.png" alt="Gui Climatização" class="h-10 w-auto object-contain" style="height: 40px; max-height: 40px; width: auto;">
+      <button id="mobile-close-btn" class="p-2 text-slate-500 hover:text-slate-800">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <div class="flex flex-col gap-4 py-8 text-lg font-black text-[#0a2540]">
+      <a href="#inicio" class="mobile-nav-link hover:text-[#0066cc]">Início</a>
+      <a href="#servicos" class="mobile-nav-link hover:text-[#0066cc]">Serviços</a>
+      <a href="#camaras-frias" class="mobile-nav-link hover:text-[#0066cc] flex items-center justify-between">
+        <span>Câmaras Frias &amp; Agro</span>
+        <span class="text-xs bg-blue-100 text-[#0066cc] px-2 py-0.5 rounded-full">+20 Anos</span>
+      </a>
+      <a href="#higienizacao" class="mobile-nav-link hover:text-[#0066cc]">Higienização Profissional</a>
+      <a href="#calculadora" class="mobile-nav-link hover:text-[#0066cc]">Calculadora de BTUs</a>
+      <a href="#agendamento" class="mobile-nav-link hover:text-[#0066cc]">Agendamento Online</a>
+      <a href="#depoimentos" class="mobile-nav-link hover:text-[#0066cc]">Depoimentos</a>
+      <a href="#localizacao" class="mobile-nav-link hover:text-[#0066cc]">Onde Estamos</a>
+    </div>
+
+    <div class="mt-auto space-y-3 pt-6 border-t border-slate-200">
+      <a href="https://wa.me/5577991573470" target="_blank"
+         class="w-full py-4 px-4 rounded-xl btn-orange text-center text-sm font-extrabold flex items-center justify-center gap-2 shadow-lg">
+        <i data-lucide="message-circle" class="w-5 h-5"></i>
+        <span>Chamar no WhatsApp: (77) 99157-3470</span>
+      </a>
+      <div class="text-center text-xs text-slate-500">
+        R. Tapuirí, 103 - Jardim Bela Vista, Primavera do Leste - MT
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section with Clean Bright Background (No People) -->
+  <section id="inicio" class="hero-bg-section relative pt-12 pb-20 lg:pt-24 lg:pb-32 overflow-hidden border-b border-slate-200">
+    
+    <!-- White Gradient Mask on the left to guarantee 100% text contrast -->
+    <div class="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/30 lg:to-transparent lg:w-3/5 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Left: Headline & Orange CTAs -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-[#0066cc] text-xs sm:text-sm font-extrabold shadow-sm">
+            <span class="flex h-2 w-2 rounded-full bg-[#0066cc]"></span>
+            <i data-lucide="check-circle" class="w-4 h-4 text-[#0066cc]"></i>
+            <span>Técnico Certificado • Mais de 20 anos de experiência</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0a2540] tracking-tight leading-[1.12]">
+            Especialista em <br>
+            <span class="text-[#0066cc]">Ar-Condicionado</span> &amp; <br class="hidden sm:inline">
+            <span class="text-[#0a2540]">Câmaras Frias</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-700 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
+            Instalação com padrão técnico de fábrica, higienização profunda bactericida e manutenção completa. O conforto da sua família e a temperatura ideal da sua empresa com garantia e rapidez.
+          </p>
+
+          <!-- 4 Bullet highlights in clean white pills -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+            <div class="p-3 rounded-2xl bg-white/95 backdrop-blur-sm border border-slate-200 shadow-sm text-left">
+              <i data-lucide="zap" class="w-5 h-5 text-[#ff6a00] mb-1"></i>
+              <div class="text-[11px] text-slate-500 font-medium">Atendimento</div>
+              <div class="font-black text-sm text-[#0a2540]">Rápido &amp; Pontual</div>
+            </div>
+
+            <div class="p-3 rounded-2xl bg-white/95 backdrop-blur-sm border border-slate-200 shadow-sm text-left">
+              <i data-lucide="shield-check" class="w-5 h-5 text-[#0066cc] mb-1"></i>
+              <div class="text-[11px] text-slate-500 font-medium">Instalação</div>
+              <div class="font-black text-sm text-[#0a2540]">Padrão Fábrica</div>
+            </div>
+
+            <div class="p-3 rounded-2xl bg-white/95 backdrop-blur-sm border border-slate-200 shadow-sm text-left">
+              <i data-lucide="sparkles" class="w-5 h-5 text-[#0066cc] mb-1"></i>
+              <div class="text-[11px] text-slate-500 font-medium">Higienização</div>
+              <div class="font-black text-sm text-[#0a2540]">Sem Sujar Parede</div>
+            </div>
+
+            <div class="p-3 rounded-2xl bg-white/95 backdrop-blur-sm border border-slate-200 shadow-sm text-left">
+              <i data-lucide="snowflake" class="w-5 h-5 text-[#0066cc] mb-1"></i>
+              <div class="text-[11px] text-slate-500 font-medium">Câmaras Frias</div>
+              <div class="font-black text-sm text-[#0a2540]">Comércio &amp; Agro</div>
+            </div>
+          </div>
+
+          <!-- ALL BUTTONS ARE ORANGE -->
+          <div class="flex flex-col sm:flex-row items-center gap-4 pt-3 justify-center lg:justify-start">
+            <a href="https://wa.me/5577991573470?text=Ol%C3%A1%2C%20Gui%20Climatiza%C3%A7%C3%A3o!%20Gostaria%20de%20solicitar%20um%20atendimento%20ou%20or%C3%A7amento." 
+               target="_blank"
+               class="w-full sm:w-auto px-8 py-4 rounded-xl btn-orange text-base shadow-lg">
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+              <span>Fale Comigo no WhatsApp</span>
+            </a>
+
+            <a href="#agendamento" 
+               class="w-full sm:w-auto px-8 py-4 rounded-xl btn-orange-outline text-base">
+              <i data-lucide="calendar" class="w-5 h-5"></i>
+              <span>Agendar Online</span>
+            </a>
+          </div>
+
+          <!-- Social Proof Small -->
+          <div class="flex items-center justify-center lg:justify-start gap-3 pt-2 text-xs text-slate-600">
+            <div class="flex text-[#ff6a00]">
+              <i data-lucide="star" class="w-4 h-4 fill-[#ff6a00]"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-[#ff6a00]"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-[#ff6a00]"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-[#ff6a00]"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-[#ff6a00]"></i>
+            </div>
+            <span><strong class="text-[#0a2540]">5.0 de Avaliação:</strong> Clientes 100% satisfeitos na região</span>
+          </div>
+
+        </div>
+
+        <!-- Right Side: Clean Open Architectural Space revealing the background AC and window -->
+        <div class="lg:col-span-5 hidden lg:flex flex-col items-end justify-center space-y-4">
+          
+          <div class="bg-white/95 backdrop-blur-md border border-blue-200 px-5 py-3 rounded-2xl shadow-lg flex items-center gap-3 animate-float">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-[#0066cc]">
+              <i data-lucide="award" class="w-6 h-6"></i>
+            </div>
+            <div class="text-left text-xs">
+              <div class="font-black text-[#0a2540] text-sm">+20 Anos de Experiência</div>
+              <div class="text-slate-500 font-medium">Técnico Totalmente Especializado</div>
+            </div>
+          </div>
+
+          <div class="bg-white/95 backdrop-blur-md border border-blue-200 px-4 py-2.5 rounded-2xl shadow-lg flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#ff6a00] animate-pulse"></span>
+            <span class="text-xs font-black text-[#0a2540]">Economia de até 30% na Conta de Luz</span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Brands Compatibility Strip -->
+  <section class="py-6 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="text-center md:text-left">
+          <span class="text-xs uppercase tracking-wider font-black text-[#0a2540]">Manutenção e Instalação de Todas as Marcas:</span>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-8 font-black text-slate-400 text-sm tracking-wide">
+          <span class="hover:text-[#0066cc] transition-colors">DAIKIN</span>
+          <span class="hover:text-[#0066cc] transition-colors">LG</span>
+          <span class="hover:text-[#0066cc] transition-colors">SAMSUNG</span>
+          <span class="hover:text-[#0066cc] transition-colors">MIDEA</span>
+          <span class="hover:text-[#0066cc] transition-colors">GREE</span>
+          <span class="hover:text-[#0066cc] transition-colors">CARRIER</span>
+          <span class="hover:text-[#0066cc] transition-colors">ELGIN</span>
+          <span class="hover:text-[#0066cc] transition-colors">FUJITSU</span>
+          <span class="hover:text-[#0066cc] transition-colors">ELECTROLUX</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete Services Section (Clean White Cards + Orange Buttons) -->
+  <section id="servicos" class="py-16 sm:py-24 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-[#0066cc] border border-blue-200 text-xs font-black uppercase tracking-wider">
+          <i data-lucide="wrench" class="w-3.5 h-3.5"></i>
+          Qualidade &amp; Segurança
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-black text-[#0a2540]">
+          Serviços de <span class="text-[#0066cc]">Alta Performance</span>
+        </h2>
+        <p class="text-slate-600 text-base">
+          Do ar-condicionado residencial às instalações comerciais mais exigentes, com ferramentas de última geração.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Card 1: Instalação -->
+        <div class="clean-white-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between">
+          <div class="space-y-4">
+            
+            <div class="w-full h-44 rounded-2xl bg-white border border-slate-100 overflow-hidden flex items-center justify-center p-2">
+              <img src="assets/images/ar-condicionado.jpg" alt="Instalação de Ar-Condicionado" class="max-h-full max-w-full object-contain">
+            </div>
+
+            <div class="inline-block px-2.5 py-0.5 rounded-full bg-blue-50 text-[#0066cc] text-[11px] font-black uppercase tracking-wider">
+              Instalação Padrão Técnico
+            </div>
+
+            <h3 class="text-xl font-black text-[#0a2540]">Instalação de Ar-Condicionado</h3>
+            
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Instalação rigorosamente dentro do padrão exigido pelos fabricantes (Split, Inverter, Multi-Split, Piso-Teto e Cassete), mantendo sua garantia de fábrica intacta.
+            </p>
+
+            <ul class="space-y-2 text-xs text-slate-600 pt-3 border-t border-slate-100">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#0066cc]"></i> Desidratação do sistema com vacuômetro digital</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#0066cc]"></i> Tubulação de cobre com isolamento térmico blindado</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#0066cc]"></i> Suportes reforçados e amortecedores anti-vibração</li>
+            </ul>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-slate-100">
+            <button onclick="selectServiceAndSchedule('Instalação')" class="w-full py-3 rounded-xl btn-orange text-xs font-extrabold">
+              <span>Agendar Instalação</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2: Higienização Profissional -->
+        <div class="clean-white-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between relative border-2 border-blue-200">
+          <div class="absolute -top-3.5 right-6 px-3 py-1 rounded-full bg-[#0066cc] text-white text-[10px] font-black uppercase tracking-wider shadow-md">
+            Mais Solicitado
+          </div>
+
+          <div class="space-y-4">
+            
+            <div class="w-full h-44 rounded-2xl bg-white border border-slate-100 overflow-hidden flex items-center justify-center p-2">
+              <img src="assets/images/higienizacao.jpg" alt="Higienização de Ar-Condicionado" class="max-h-full max-w-full object-contain">
+            </div>
+
+            <div class="inline-block px-2.5 py-0.5 rounded-full bg-blue-50 text-[#0066cc] text-[11px] font-black uppercase tracking-wider">
+              Saúde &amp; Economia
+            </div>
+
+            <h3 class="text-xl font-black text-[#0a2540]">Higienização Profissional Completa</h3>
+            
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Limpeza profunda no local utilizando bolsa coletora estanque especial. Não respinga na sua parede ou mobília. Elimina 99.9% de ácaros, fungos e bactérias.
+            </p>
+
+            <ul class="space-y-2 text-xs text-slate-600 pt-3 border-t border-slate-100">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#0066cc]"></i> Aplicação de bactericida com registro na ANVISA</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#0066cc]"></i> Redução de até 30% na conta de energia elétrica</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#0066cc]"></i> Fim do cheiro ruim de mofo e pinga-pinga</li>
+            </ul>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-slate-100">
+            <button onclick="selectServiceAndSchedule('Higienização')" class="w-full py-3 rounded-xl btn-orange text-xs font-extrabold shadow-md">
+              <span>Agendar Higienização</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3: Manutenção & Diagnóstico -->
+        <div class="clean-white-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between">
+          <div class="space-y-4">
+            
+            <div class="w-full h-44 rounded-2xl bg-white border border-slate-100 overflow-hidden flex items-center justify-center p-2">
+              <img src="assets/images/manifold.jpg" alt="Manutenção e Diagnóstico com Manifold" class="max-h-full max-w-full object-contain">
+            </div>
+
+            <div class="inline-block px-2.5 py-0.5 rounded-full bg-blue-50 text-[#0066cc] text-[11px] font-black uppercase tracking-wider">
+              Diagnóstico Preciso
+            </div>
+
+            <h3 class="text-xl font-black text-[#0a2540]">Manutenção &amp; Carga de Gás</h3>
+            
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Conserto de ar que não gela, eliminação de barulhos, conserto de placas eletrônicas e recarga técnica de gás refrigerante pesada na balança digital.
+            </p>
+
+            <ul class="space-y-2 text-xs text-slate-600 pt-3 border-t border-slate-100">
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#0066cc]"></i> Teste e localização de micro-vazamentos de gás</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#0066cc]"></i> Troca de capacitores, turbinas e sensores originais</li>
+              <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#0066cc]"></i> Diagnóstico com manifold digital de precisão</li>
+            </ul>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-slate-100">
+            <button onclick="selectServiceAndSchedule('Manutenção')" class="w-full py-3 rounded-xl btn-orange text-xs font-extrabold">
+              <span>Solicitar Manutenção</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Cold Chambers & Agribusiness Section (Clean White & Orange Button) -->
+  <section id="camaras-frias" class="py-16 sm:py-24 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="clean-white-card rounded-3xl p-6 sm:p-10 border border-blue-200 bg-white">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <!-- Image -->
+          <div class="lg:col-span-5">
+            <div class="rounded-2xl overflow-hidden bg-white border border-slate-200 p-3 shadow-sm">
+              <img src="assets/images/camara-fria.jpg" alt="Manutenção em Câmaras Frias Industriais" class="w-full h-auto object-contain rounded-xl">
+              <div class="p-3 text-center bg-[#0a2540] rounded-xl mt-3 text-white">
+                <div class="text-[11px] text-sky-300 font-bold uppercase tracking-wider">Sub-Zero &amp; Climatização Precisa</div>
+                <div class="text-sm font-extrabold">Câmaras Frias para Comércio &amp; Agronegócio</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="lg:col-span-7 space-y-6">
+            
+            <div class="space-y-2">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-[#0066cc] font-black text-xs uppercase tracking-wider">
+                <i data-lucide="snowflake" class="w-3.5 h-3.5"></i>
+                Mais de 20 Anos de Experiência
+              </span>
+              <h2 class="text-3xl sm:text-4xl font-black text-[#0a2540]">
+                Manutenção em <span class="text-[#0066cc]">Câmaras Frias</span>
+              </h2>
+              <p class="text-slate-600 text-base leading-relaxed">
+                Desempenho, segurança e continuidade. Conservando o que move o seu negócio com técnico especializado em sistemas de todas as marcas e modelos.
+              </p>
+            </div>
+
+            <!-- 4 Sectors -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              
+              <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-1.5">
+                <div class="flex items-center gap-2 font-black text-sm text-[#0a2540]">
+                  <i data-lucide="snowflake" class="w-4 h-4 text-[#0066cc]"></i>
+                  <span>CONGELADOS</span>
+                </div>
+                <p class="text-xs text-slate-600">
+                  Carnes, pescados, gelo, alimentos e produtos que exigem temperaturas negativas estáveis.
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-1.5">
+                <div class="flex items-center gap-2 font-black text-sm text-[#0a2540]">
+                  <i data-lucide="thermometer-snowflake" class="w-4 h-4 text-[#0066cc]"></i>
+                  <span>RESFRIADOS</span>
+                </div>
+                <p class="text-xs text-slate-600">
+                  Hortifrúti, laticínios, bebidas e perecíveis mantidos na temperatura ideal sem perda de peso.
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-1.5">
+                <div class="flex items-center gap-2 font-black text-sm text-[#0a2540]">
+                  <i data-lucide="wheat" class="w-4 h-4 text-[#0066cc]"></i>
+                  <span>SEMENTES DE MILHO</span>
+                </div>
+                <p class="text-xs text-slate-600">
+                  Controle rigoroso de temperatura e umidade para garantir o vigor e o poder germinativo.
+                </p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-1.5">
+                <div class="flex items-center gap-2 font-black text-sm text-[#0a2540]">
+                  <i data-lucide="sprout" class="w-4 h-4 text-[#0066cc]"></i>
+                  <span>GRÃOS &amp; ARMAZÉNS</span>
+                </div>
+                <p class="text-xs text-slate-600">
+                  Soluções para conservação de longo prazo, prevenindo deterioração e pragas de armazenagem.
+                </p>
+              </div>
+
+            </div>
+
+            <!-- Highlights Checklist -->
+            <div class="grid grid-cols-2 gap-2 text-xs font-bold text-[#0a2540] pt-2">
+              <div class="flex items-center gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-[#0066cc]"></i> Peças Originais
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-[#0066cc]"></i> Atendimento Rápido
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-[#0066cc]"></i> Mais Eficiência, Menos Custos
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-[#0066cc]"></i> Procedimentos Técnicos Seguros
+              </div>
+            </div>
+
+            <!-- Orange Button CTA -->
+            <div class="pt-2">
+              <a href="https://wa.me/5577991573470?text=Ol%C3%A1%2C%20Gui%20Climatiza%C3%A7%C3%A3o!%20Preciso%20de%20atendimento%20especializado%20para%20C%C3%A2mara%20Fria%20%2F%20Refrigera%C3%A7%C3%A3o%20Comercial." 
+                 target="_blank"
+                 class="px-7 py-4 rounded-xl btn-orange text-sm shadow-md">
+                <i data-lucide="phone-call" class="w-4 h-4"></i>
+                <span>Chamar Especialista em Câmaras Frias</span>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive WhatsApp Booking Section -->
+  <section id="agendamento" class="py-16 sm:py-24 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-[#0066cc] border border-blue-200 text-xs font-black uppercase tracking-wider">
+          <i data-lucide="calendar-check" class="w-3.5 h-3.5"></i>
+          Agendamento Direto no WhatsApp
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-black text-[#0a2540]">
+          Solicite seu <span class="text-[#0066cc]">Orçamento Rápido</span>
+        </h2>
+        <p class="text-slate-600 text-base">
+          Preencha os dados abaixo. Nós preparamos uma mensagem organizada para você enviar ao WhatsApp do especialista em 1 clique!
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Form Column -->
+        <div class="lg:col-span-7 clean-white-card p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
+          <form id="whatsapp-booking-form" class="space-y-5">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="booking-name" class="block text-xs font-black text-[#0a2540] mb-1.5">
+                  Seu Nome Completo *
+                </label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                    <i data-lucide="user" class="w-4 h-4"></i>
+                  </div>
+                  <input type="text" id="booking-name" required placeholder="Ex: Roberto Silva"
+                         class="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-blue focus:ring-2 focus:ring-blue-100 text-slate-900 text-sm outline-none transition-all placeholder:text-slate-400 font-medium">
+                </div>
+              </div>
+
+              <div>
+                <label for="booking-phone" class="block text-xs font-black text-[#0a2540] mb-1.5">
+                  Seu Telefone / WhatsApp
+                </label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                    <i data-lucide="phone" class="w-4 h-4"></i>
+                  </div>
+                  <input type="tel" id="booking-phone" placeholder="Ex: (77) 99999-9999"
+                         class="w-full pl-10 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-blue focus:ring-2 focus:ring-blue-100 text-slate-900 text-sm outline-none transition-all placeholder:text-slate-400 font-medium">
+                </div>
+              </div>
+            </div>
+
+            <!-- Service Select -->
+            <div>
+              <label for="booking-service" class="block text-xs font-black text-[#0a2540] mb-1.5">
+                Qual serviço você deseja agendar? *
+              </label>
+              <div class="relative">
+                <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-brand-blue">
+                  <i data-lucide="wrench" class="w-4 h-4"></i>
+                </div>
+                <select id="booking-service" class="w-full pl-10 pr-8 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-blue focus:ring-2 focus:ring-blue-100 text-slate-900 text-sm outline-none transition-all appearance-none cursor-pointer font-medium">
+                  <option value="Instalação de Ar-Condicionado Novo (Split / Inverter)">❄️ Instalação de Ar-Condicionado Novo (Split / Inverter)</option>
+                  <option value="Higienização Profissional Completa (Sem Sujar a Parede)">🧼 Higienização Profissional Completa (Sem Sujar a Parede)</option>
+                  <option value="Manutenção & Conserto (Ar não gela / pingando / ruído)">🔧 Manutenção &amp; Conserto (Ar não gela / pingando / ruído)</option>
+                  <option value="Câmaras Frias (Congelados / Resfriados / Agro)">🥩 Câmaras Frias (Congelados / Resfriados / Agro)</option>
+                  <option value="Carga de Gás Ecológico com Balança Digital">💨 Carga de Gás com Balança Digital</option>
+                  <option value="Desinstalação ou Remanejamento de Aparelho">📦 Desinstalação ou Remanejamento de Aparelho</option>
+                  <option value="Contrato de Manutenção para Empresas / Fazendas">🏢 Contrato de Manutenção para Empresas / Fazendas</option>
+                </select>
+                <div class="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-slate-400">
+                  <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="booking-location-type" class="block text-xs font-black text-[#0a2540] mb-1.5">
+                  Tipo de Local
+                </label>
+                <select id="booking-location-type" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-blue focus:ring-2 focus:ring-blue-100 text-slate-900 text-sm outline-none transition-all font-medium">
+                  <option value="Residencial (Casa / Apartamento)">🏠 Residencial (Casa / Apartamento)</option>
+                  <option value="Comercial (Loja / Restaurante / Consultório)">🏪 Comercial (Loja / Restaurante)</option>
+                  <option value="Empresa / Escritório / Galpão">🏢 Empresa / Escritório / Galpão</option>
+                  <option value="Fazenda / Agronegócio (Armazém / Silo)">🌾 Fazenda / Agronegócio</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="booking-city" class="block text-xs font-black text-[#0a2540] mb-1.5">
+                  Sua Cidade / Região
+                </label>
+                <select id="booking-city" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-blue focus:ring-2 focus:ring-blue-100 text-slate-900 text-sm outline-none transition-all font-medium">
+                  <option value="Ibipitanga - BA e Região">📍 Ibipitanga - BA e Região</option>
+                  <option value="Primavera do Leste - MT">📍 Primavera do Leste - MT</option>
+                  <option value="Macaúbas - BA">📍 Macaúbas - BA</option>
+                  <option value="Boquira - BA">📍 Boquira - BA</option>
+                  <option value="Rio do Pires - BA">📍 Rio do Pires - BA</option>
+                  <option value="Fazenda ou Zona Rural Próxima">📍 Fazenda / Zona Rural</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="booking-period" class="block text-xs font-black text-[#0a2540] mb-1.5">
+                Melhor Período para Receber o Técnico
+              </label>
+              <select id="booking-period" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-blue focus:ring-2 focus:ring-blue-100 text-slate-900 text-sm outline-none transition-all font-medium">
+                <option value="Manhã (08:00 às 12:00)">☀️ Manhã (08:00 às 12:00)</option>
+                <option value="Tarde (13:00 às 18:00)">🌤️ Tarde (13:00 às 18:00)</option>
+                <option value="Qualquer Horário Comercial">🕒 Qualquer Horário Comercial</option>
+                <option value="🚨 URGÊNCIA (Câmara Fria ou Comércio)">🚨 URGENTE (Câmara Fria ou Comércio)</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="booking-notes" class="block text-xs font-black text-[#0a2540] mb-1.5">
+                Observações / Marca do Aparelho (Opcional)
+              </label>
+              <textarea id="booking-notes" rows="2" placeholder="Ex: Ar Split Inverter LG 12.000 BTUs / Câmara fria de carnes com temperatura instável..."
+                        class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-blue focus:ring-2 focus:ring-blue-100 text-slate-900 text-sm outline-none transition-all placeholder:text-slate-400 font-medium resize-none"></textarea>
+            </div>
+
+            <!-- SUBMIT BUTTON IN ORANGE -->
+            <button type="submit"
+                    class="w-full py-4 rounded-xl btn-orange text-base shadow-lg">
+              <i data-lucide="send" class="w-5 h-5"></i>
+              <span>Enviar Agendamento para o WhatsApp Agora</span>
+            </button>
+
+            <div class="text-center text-xs text-slate-500 flex items-center justify-center gap-1.5">
+              <i data-lucide="shield" class="w-3.5 h-3.5 text-[#0066cc]"></i>
+              <span>Atendimento direto pelo WhatsApp oficial com resposta ágil.</span>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Preview Column -->
+        <div class="lg:col-span-5 space-y-4">
+          
+          <div class="p-4 rounded-2xl bg-blue-50 border border-blue-100 text-[#0a2540] text-xs">
+            <div class="font-black text-[#0066cc] flex items-center gap-1.5 mb-1">
+              <i data-lucide="smartphone" class="w-4 h-4"></i>
+              <span>Prévia da sua Mensagem</span>
+            </div>
+            <p class="text-slate-600">
+              Veja abaixo como seu pedido será enviado perfeitamente formatado para o WhatsApp:
+            </p>
+          </div>
+
+          <!-- Smartphone Screen Mockup -->
+          <div class="rounded-3xl border-2 border-slate-300 bg-[#0a2540] overflow-hidden shadow-xl">
+            <!-- Top bar -->
+            <div class="bg-[#06182c] px-4 py-3 flex items-center justify-between border-b border-white/5">
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full overflow-hidden bg-white p-0.5 shadow-sm">
+                  <img src="assets/images/logo.png" alt="Gui Climatização" class="w-full h-full object-contain">
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-white leading-tight">Gui Climatização</div>
+                  <div class="text-[10px] text-sky-300 flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
+                    Online no WhatsApp
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center gap-2 text-slate-400">
+                <i data-lucide="phone" class="w-4 h-4"></i>
+                <i data-lucide="more-vertical" class="w-4 h-4"></i>
+              </div>
+            </div>
+
+            <!-- Chat Body -->
+            <div class="p-4 min-h-[290px] flex flex-col justify-end bg-[#0b141a]">
+              <div class="bg-[#005c4b] p-3 text-white text-xs leading-relaxed max-w-[95%] ml-auto rounded-xl rounded-tr-none shadow-md">
+                <pre id="whatsapp-preview-text" class="whitespace-pre-wrap font-sans text-xs select-none"></pre>
+                <div class="text-[10px] text-right text-emerald-200/70 mt-1 flex items-center justify-end gap-1">
+                  <span>Agora</span>
+                  <i data-lucide="check-check" class="w-3.5 h-3.5 text-cyan-300"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom chat bar -->
+            <div class="bg-[#1f2c34] px-3 py-2 flex items-center gap-2 text-slate-400 text-xs">
+              <i data-lucide="smile" class="w-4 h-4"></i>
+              <div class="flex-1 bg-[#2a3942] rounded-full px-3 py-1.5 text-slate-400 text-xs">
+                Mensagem pronta para envio...
+              </div>
+              <div class="w-7 h-7 rounded-full bg-[#ff6a00] text-white flex items-center justify-center">
+                <i data-lucide="send" class="w-3.5 h-3.5"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direct Phone -->
+          <div class="clean-white-card p-4 rounded-2xl flex flex-wrap items-center justify-between gap-2 text-xs">
+            <span class="font-bold text-[#0a2540]">Dúvidas rápidas?</span>
+            <a href="tel:5577991573470" class="text-[#ff6a00] font-black hover:underline">
+              Ligue: (77) 99157-3470
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive BTU Calculator Section (Clean White & Orange Button) -->
+  <section id="calculadora" class="py-16 sm:py-24 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-[#0066cc] border border-blue-200 text-xs font-black uppercase tracking-wider">
+          <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
+          Simulador Inteligente
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-black text-[#0a2540]">
+          Calculadora de <span class="text-[#0066cc]">BTUs do Ar-Condicionado</span>
+        </h2>
+        <p class="text-slate-600 text-base">
+          Descubra a capacidade exata para refrigerar seu ambiente com economia e rapidez.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center max-w-5xl mx-auto">
+        
+        <!-- Controls Column -->
+        <div class="lg:col-span-7 clean-white-card p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
+          
+          <!-- Area Slider -->
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <label for="calc-area-range" class="text-sm font-black text-[#0a2540] flex items-center gap-1.5">
+                <i data-lucide="maximize" class="w-4 h-4 text-[#0066cc]"></i>
+                Tamanho do Ambiente (m²)
+              </label>
+              <div class="flex items-center gap-1 bg-slate-100 px-3 py-1 rounded-lg border border-slate-200">
+                <input type="number" id="calc-area-number" min="5" max="100" value="18" class="w-12 bg-transparent text-right font-black text-[#0066cc] text-sm outline-none">
+                <span class="text-xs text-slate-500 font-bold">m²</span>
+              </div>
+            </div>
+            <input type="range" id="calc-area-range" min="5" max="100" value="18" step="1">
+            <div class="flex justify-between text-[11px] text-slate-400 font-medium mt-1">
+              <span>5 m² (Quarto pequeno)</span>
+              <span>25 m²</span>
+              <span>50 m²</span>
+              <span>100 m² (Salão)</span>
+            </div>
+          </div>
+
+          <!-- Sun Exposure -->
+          <div>
+            <label for="calc-sun" class="block text-sm font-black text-[#0a2540] mb-2 flex items-center gap-1.5">
+              <i data-lucide="sun" class="w-4 h-4 text-[#ff6a00]"></i>
+              Incidência Solar no Cômodo
+            </label>
+            <select id="calc-sun" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-brand-blue text-[#0a2540] text-sm outline-none font-medium">
+              <option value="light">⛅ Sol da Manhã suave ou ambiente com sombra (600 BTU/m²)</option>
+              <option value="heavy" selected>☀️ Sol da Tarde forte ou janelas de vidro grandes (800 BTU/m²)</option>
+            </select>
+          </div>
+
+          <!-- People and Electronics -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-black text-[#0a2540] flex items-center gap-1">
+                  <i data-lucide="users" class="w-3.5 h-3.5 text-[#0066cc]"></i>
+                  Pessoas no Local:
+                </span>
+                <span id="calc-people-val" class="font-black text-sm text-[#0066cc]">2</span>
+              </div>
+              <input type="range" id="calc-people" min="1" max="10" value="2">
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-black text-[#0a2540] flex items-center gap-1">
+                  <i data-lucide="tv" class="w-3.5 h-3.5 text-[#0066cc]"></i>
+                  Eletrônicos (TV/PCs):
+                </span>
+                <span id="calc-tech-val" class="font-black text-sm text-[#0066cc]">2</span>
+              </div>
+              <input type="range" id="calc-tech" min="0" max="10" value="2">
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Result Display Card -->
+        <div class="lg:col-span-5">
+          <div class="clean-white-card rounded-3xl p-6 sm:p-8 bg-white border-2 border-blue-200 shadow-md text-center space-y-5">
+            
+            <div class="w-14 h-14 mx-auto rounded-2xl bg-[#0066cc] text-white flex items-center justify-center shadow-md">
+              <i data-lucide="snowflake" class="w-7 h-7"></i>
+            </div>
+
+            <div>
+              <div class="text-xs uppercase tracking-wider font-black text-slate-500 mb-1">
+                Capacidade Recomendada
+              </div>
+              <div id="calc-btu-ideal" class="text-4xl sm:text-5xl font-black text-[#0a2540]">
+                12.000 BTUs
+              </div>
+              <div class="text-xs text-slate-500 mt-1">
+                Carga térmica estimada: <span id="calc-btu-result" class="text-[#0066cc] font-black">16.400 BTUs</span>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-blue-50/50 border border-blue-100 text-xs text-slate-600 text-left leading-relaxed">
+              <p id="calc-btu-tip">
+                Ideal para quartos e salas com incidência moderada de sol. Recomendamos modelos Inverter para garantir até 70% de economia de energia.
+              </p>
+            </div>
+
+            <!-- ORANGE BUTTON FOR CALCULATOR -->
+            <a id="calc-whatsapp-btn" href="https://wa.me/5577991573470" target="_blank"
+               class="w-full py-4 px-4 rounded-xl btn-orange text-sm font-extrabold shadow-md">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>Orçamento p/ Este Ar no WhatsApp</span>
+            </a>
+
+            <div class="text-[11px] text-slate-500 font-medium">
+              ⚡ Instalação com vácuo técnico e garantia assegurada
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Why Hygiene Matters (Clean White Section) -->
+  <section id="higienizacao" class="py-16 sm:py-24 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-[#0066cc] border border-blue-200 text-xs font-black uppercase tracking-wider">
+          <i data-lucide="shield-alert" class="w-3.5 h-3.5"></i>
+          Alerta de Saúde &amp; Conta de Luz
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-black text-[#0a2540]">
+          Por que a <span class="text-[#0066cc]">Higienização Profissional</span> é Indispensável?
+        </h2>
+        <p class="text-slate-600 text-base">
+          Lavar apenas o filtro plástico em casa não resolve! A sujeira acumulada na turbina e serpentina rouba seu dinheiro e prejudica a respiração da sua família.
+        </p>
+      </div>
+
+      <!-- Comparison: Dirty vs Clean -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+        
+        <!-- Dirty -->
+        <div class="rounded-3xl p-6 sm:p-8 bg-slate-50 border border-slate-200 space-y-4">
+          <div class="flex items-center gap-3 text-[#0a2540] font-black text-lg">
+            <div class="w-10 h-10 rounded-xl bg-slate-200 flex items-center justify-center shrink-0">
+              <i data-lucide="x-circle" class="w-6 h-6 text-slate-700"></i>
+            </div>
+            <span>Ar-Condicionado Sujo e Sem Manutenção</span>
+          </div>
+
+          <ul class="space-y-3 text-sm text-slate-700">
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="alert-triangle" class="w-5 h-5 text-[#ff6a00] shrink-0 mt-0.5"></i>
+              <span><strong>Conta de luz até 30% mais cara:</strong> O motor é forçado a trabalhar o dobro do tempo para refrigerar.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="alert-triangle" class="w-5 h-5 text-[#ff6a00] shrink-0 mt-0.5"></i>
+              <span><strong>Alergias e rinite constantes:</strong> Espalha no ar milhões de ácaros, bactérias e esporos de mofo.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="alert-triangle" class="w-5 h-5 text-[#ff6a00] shrink-0 mt-0.5"></i>
+              <span><strong>Pinga-pinga na parede:</strong> A sujeira obstrui o dreno, fazendo a água transbordar para o quarto.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="alert-triangle" class="w-5 h-5 text-[#ff6a00] shrink-0 mt-0.5"></i>
+              <span><strong>Queima do compressor:</strong> O esforço térmico excessivo reduz a vida útil do aparelho pela metade.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Clean by Gui Climatização -->
+        <div class="rounded-3xl p-6 sm:p-8 bg-blue-50/50 border border-blue-200 space-y-4">
+          <div class="flex items-center gap-3 text-[#0a2540] font-black text-lg">
+            <div class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center shrink-0">
+              <i data-lucide="check-circle" class="w-6 h-6 text-[#0066cc]"></i>
+            </div>
+            <span>Higienizado pela Gui Climatização</span>
+          </div>
+
+          <ul class="space-y-3 text-sm text-slate-700">
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-5 h-5 text-[#0066cc] shrink-0 mt-0.5"></i>
+              <span><strong>Economia Imediata:</strong> O ar gela em poucos minutos e desliga o motor mais rápido.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-5 h-5 text-[#0066cc] shrink-0 mt-0.5"></i>
+              <span><strong>Ar 100% Puro &amp; Bactericida:</strong> Aplicação de produto desinfetante hospitalar aprovado na ANVISA.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-5 h-5 text-[#0066cc] shrink-0 mt-0.5"></i>
+              <span><strong>Sem Sujeira na Casa:</strong> Bolsa coletora vedada recolhe toda a água suja diretamente no reservatório.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="check" class="w-5 h-5 text-[#0066cc] shrink-0 mt-0.5"></i>
+              <span><strong>Máxima Vida Útil:</strong> Seu investimento dura anos com desempenho como novo.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Signs checklist -->
+      <div class="clean-white-card p-6 sm:p-8 rounded-3xl border border-slate-200 max-w-5xl mx-auto">
+        <h4 class="text-base sm:text-lg font-black text-[#0a2540] mb-4 text-center">
+          🚨 4 Sinais de que você precisa chamar a Gui Climatização agora:
+        </h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-center">
+          <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+            <div class="text-2xl mb-1">💧</div>
+            <div class="font-black text-sm text-[#0a2540]">Pingando Água</div>
+            <div class="text-xs text-slate-500 mt-1">Dreno entupido ou bandeja suja</div>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+            <div class="text-2xl mb-1">👃</div>
+            <div class="font-black text-sm text-[#0a2540]">Cheiro de Mofo</div>
+            <div class="text-xs text-slate-500 mt-1">Fungos vivos na turbina</div>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+            <div class="text-2xl mb-1">⏳</div>
+            <div class="font-black text-sm text-[#0a2540]">Demora para Gelar</div>
+            <div class="text-xs text-slate-500 mt-1">Falta de gás ou serpentina bloqueada</div>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-100">
+            <div class="text-2xl mb-1">🔊</div>
+            <div class="font-black text-sm text-[#0a2540]">Barulho / Estalos</div>
+            <div class="text-xs text-slate-500 mt-1">Vibração e desgaste nas buchas</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="depoimentos" class="py-16 sm:py-24 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-[#0066cc] border border-blue-200 text-xs font-black uppercase tracking-wider">
+          <i data-lucide="star" class="w-3.5 h-3.5 fill-[#ff6a00] text-[#ff6a00]"></i>
+          Avaliações Verificadas
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-black text-[#0a2540]">
+          O que dizem os nossos clientes
+        </h2>
+        <p class="text-slate-600 text-base">
+          Pontualidade, capricho e solução definitiva para o seu clima.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="clean-white-card p-6 rounded-3xl border border-slate-200 space-y-4">
+          <div class="flex items-center text-[#ff6a00] gap-1">
+            <i data-lucide="star" class="w-4 h-4 fill-[#ff6a00]"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-[#ff6a00]"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-[#ff6a00]"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-[#ff6a00]"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-[#ff6a00]"></i>
+          </div>
+          <p class="text-sm text-slate-700 italic leading-relaxed">
+            "Excelente atendimento! O Gui instalou dois aparelhos inverter na minha casa com todo cuidado, fez o vácuo com o equipamento digital e deixou tudo limpinho. O ar gela muito rápido."
+          </p>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+            <div>
+              <div class="font-black text-[#0a2540] text-sm">Marcos Eduardo</div>
+              <div class="text-xs text-[#0066cc] font-semibold">Cliente Residencial</div>
+            </div>
+            <span class="text-xs text-slate-400">Ibipitanga - BA</span>
+          </div>
+        </div>
+
+        <div class="clean-white-card p-6 rounded-3xl border border-slate-200 space-y-4">
+          <div class="flex items-center text-[#ff6a00] gap-1">
+            <i data-lucide="star" class="w-4 h-4 fill-[#ff6a00]"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-[#ff6a00]"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-[#ff6a00]"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-[#ff6a00]"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-[#ff6a00]"></i>
+          </div>
+          <p class="text-sm text-slate-700 italic leading-relaxed">
+            "Nossa câmara de resfriados começou a oscilar a temperatura e acionamos a Gui Climatização. Ele identificou a falha no mesmo dia e salvou todo o nosso estoque de perecíveis. Recomendo de olhos fechados!"
+          </p>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+            <div>
+              <div class="font-black text-[#0a2540] text-sm">Juliana Mendes</div>
+              <div class="text-xs text-[#0066cc] font-semibold">Distribuidora Comercial</div>
+            </div>
+            <span class="text-xs text-slate-400">Primavera do Leste - MT</span>
+          </div>
+        </div>
+
+        <div class="clean-white-card p-6 rounded-3xl border border-slate-200 space-y-4">
+          <div class="flex items-center text-[#ff6a00] gap-1">
+            <i data-lucide="star" class="w-4 h-4 fill-[#ff6a00]"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-[#ff6a00]"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-[#ff6a00]"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-[#ff6a00]"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-[#ff6a00]"></i>
+          </div>
+          <p class="text-sm text-slate-700 italic leading-relaxed">
+            "A higienização foi nota dez! Tinha receio de molhar a parede do quarto, mas ele usou uma bolsa vedada e limpou com bactericida. Acabou o cheiro ruim e as crianças agora dormem sem tosse."
+          </p>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+            <div>
+              <div class="font-black text-[#0a2540] text-sm">Cláudio Oliveira</div>
+              <div class="text-xs text-[#0066cc] font-semibold">Higienização Completa</div>
+            </div>
+            <span class="text-xs text-slate-400">Região de Ibipitanga</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Location & Google Maps Section -->
+  <section id="localizacao" class="py-16 sm:py-24 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Info Column -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-[#0066cc] border border-blue-200 text-xs font-black uppercase tracking-wider">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+            Localização &amp; Atendimento
+          </span>
+
+          <h2 class="text-3xl sm:text-4xl font-black text-[#0a2540]">
+            Onde Estamos &amp; <span class="text-[#0066cc]">Cidades Atendidas</span>
+          </h2>
+
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Atendimento presencial ágil com equipe equipada para residências, lojas, fazendas e indústrias.
+          </p>
+
+          <div class="space-y-4">
+            <!-- Address MT -->
+            <div class="p-4 rounded-2xl bg-white border border-slate-200 flex items-start gap-3 shadow-sm">
+              <div class="w-10 h-10 rounded-xl bg-blue-50 text-[#0066cc] flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div class="text-xs text-slate-700">
+                <div class="font-black text-[#0a2540] text-sm">Sede &amp; Endereço Técnico:</div>
+                <div class="text-slate-800 font-bold">R. Tapuirí, 103 - Jardim Bela Vista</div>
+                <div class="text-slate-500">Primavera do Leste - MT, 78850-000, Brasil</div>
+              </div>
+            </div>
+
+            <!-- Regions BA -->
+            <div class="p-4 rounded-2xl bg-white border border-slate-200 flex items-start gap-3 shadow-sm">
+              <div class="w-10 h-10 rounded-xl bg-blue-50 text-[#0066cc] flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="navigation" class="w-5 h-5"></i>
+              </div>
+              <div class="text-xs text-slate-700">
+                <div class="font-black text-[#0a2540] text-sm">Atendimento Regional:</div>
+                <div class="text-[#0066cc] font-black">Ibipitanga e Região (Bahia)</div>
+                <div class="text-slate-500">Macaúbas, Boquira, Rio do Pires e Fazendas</div>
+              </div>
+            </div>
+
+            <!-- Operating Hours -->
+            <div class="p-4 rounded-2xl bg-white border border-slate-200 flex items-start gap-3 shadow-sm">
+              <div class="w-10 h-10 rounded-xl bg-blue-50 text-[#0066cc] flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="clock" class="w-5 h-5"></i>
+              </div>
+              <div class="text-xs text-slate-700">
+                <div class="font-black text-[#0a2540] text-sm">Horário de Funcionamento:</div>
+                <div>Segunda a Sexta: 07:30 às 18:00 | Sábado: 07:30 às 13:00</div>
+                <div class="text-[#0066cc] font-bold mt-0.5">Plantão de emergência para Câmaras Frias</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <a href="https://www.google.com/maps/search/?api=1&query=R.+Tapuir%C3%AD,+103+-+Jardim+Bela+Vista,+Primavera+do+Leste+-+MT,+78850-000" target="_blank"
+               class="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-[#0a2540] text-xs font-black flex items-center gap-2 border border-slate-200 transition-colors">
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+              <span>Abrir no Google Maps</span>
+            </a>
+
+            <!-- ORANGE BUTTON -->
+            <a href="https://wa.me/5577991573470" target="_blank"
+               class="px-5 py-2.5 rounded-xl btn-orange text-xs font-extrabold shadow-sm">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>WhatsApp: (77) 99157-3470</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Google Maps Frame -->
+        <div class="lg:col-span-7">
+          <div class="rounded-3xl overflow-hidden border border-slate-200 shadow-md bg-slate-100 h-[420px] relative">
+            <iframe 
+              src="https://maps.google.com/maps?q=R.+Tapuir%C3%AD,+103+-+Jardim+Bela+Vista,+Primavera+do+Leste+-+MT,+78850-000&t=&z=16&ie=UTF8&iwloc=&output=embed"
+              class="w-full h-full border-0"
+              loading="lazy"
+              allowfullscreen=""
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Localização Gui Climatização">
+            </iframe>
+            
+            <div class="absolute bottom-3 left-3 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-xl border border-slate-200 text-[11px] text-[#0a2540] font-black shadow-md flex items-center gap-1.5">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#ff6a00]"></i>
+              <span>R. Tapuirí, 103 - Primavera do Leste - MT</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive FAQ Section -->
+  <section class="py-16 sm:py-24 bg-white border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12 space-y-3">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-[#0066cc] border border-blue-200 text-xs font-black uppercase tracking-wider">
+          <i data-lucide="help-circle" class="w-3.5 h-3.5"></i>
+          Dúvidas Comuns
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-black text-[#0a2540]">
+          Perguntas Frequentes (FAQ)
+        </h2>
+      </div>
+
+      <div class="space-y-3.5">
+        
+        <div class="faq-item rounded-2xl clean-white-card border border-slate-200 overflow-hidden active">
+          <div class="faq-header p-5 flex items-center justify-between cursor-pointer">
+            <span class="font-black text-sm sm:text-base text-[#0a2540]">Com que frequência devo fazer a higienização do ar-condicionado?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-[#0066cc] transition-transform"></i>
+          </div>
+          <div class="faq-content px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Em residências, o recomendado pelos médicos e fabricantes é a higienização a cada <strong>6 meses</strong>. Em lojas, consultórios, escritórios ou locais com grande circulação, a higienização deve ser feita a cada <strong>3 meses</strong> para garantir economia de energia e saúde respiratória.
+          </div>
+        </div>
+
+        <div class="faq-item rounded-2xl clean-white-card border border-slate-200 overflow-hidden">
+          <div class="faq-header p-5 flex items-center justify-between cursor-pointer">
+            <span class="font-black text-sm sm:text-base text-[#0a2540]">A higienização suja a parede ou os móveis do meu quarto?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-[#0066cc] transition-transform"></i>
+          </div>
+          <div class="faq-content px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <strong>Não!</strong> Utilizamos uma bolsa coletora vedada e impermeável que envolve o ar-condicionado no local. Toda a água e produto de limpeza escorrem direto para o reservatório vedado, mantendo paredes, cortinas e móveis 100% secos e limpos.
+          </div>
+        </div>
+
+        <div class="faq-item rounded-2xl clean-white-card border border-slate-200 overflow-hidden">
+          <div class="faq-header p-5 flex items-center justify-between cursor-pointer">
+            <span class="font-black text-sm sm:text-base text-[#0a2540]">Por que o vácuo na instalação é tão importante?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-[#0066cc] transition-transform"></i>
+          </div>
+          <div class="faq-content px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            O vácuo remove o ar e a umidade de dentro da tubulação. Se for feita sem vácuo, a umidade forma ácidos que queimam o motor precocemente e anulam a garantia do fabricante. Na Gui Climatização, utilizamos bomba de vácuo e vacuômetro digital em 100% dos serviços.
+          </div>
+        </div>
+
+        <div class="faq-item rounded-2xl clean-white-card border border-slate-200 overflow-hidden">
+          <div class="faq-header p-5 flex items-center justify-between cursor-pointer">
+            <span class="font-black text-sm sm:text-base text-[#0a2540]">Vocês atendem fazendas e produtores rurais da região?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-[#0066cc] transition-transform"></i>
+          </div>
+          <div class="faq-content px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            <strong>Sim!</strong> Prestamos atendimento especializado para o agronegócio: câmaras de sementes de milho, armazenamento de grãos, frigoríficos e laticínios, com agilidade e compromisso para seu produto não sofrer perdas.
+          </div>
+        </div>
+
+        <div class="faq-item rounded-2xl clean-white-card border border-slate-200 overflow-hidden">
+          <div class="faq-header p-5 flex items-center justify-between cursor-pointer">
+            <span class="font-black text-sm sm:text-base text-[#0a2540]">Quais formas de pagamento são aceitas?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-[#0066cc] transition-transform"></i>
+          </div>
+          <div class="faq-content px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Aceitamos <strong>Pix</strong>, dinheiro e <strong>cartões de crédito e débito</strong> (com parcelamento facilitado). Para empresas e produtores, emitimos recibo e faturamento formal.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Final Clean Banner (REFORMULADA COM FUNDO 100% BRANCO, ALTO CONTRASTE E BOTÕES LARANJA) -->
+  <section class="py-16 sm:py-20 bg-white border-b border-slate-200 relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6">
+      
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-[#0066cc] font-black text-xs uppercase tracking-wider border border-blue-200">
+        <i data-lucide="zap" class="w-3.5 h-3.5 text-[#ff6a00]"></i>
+        Atendimento Imediato
+      </span>
+
+      <!-- High-contrast crisp dark blue title on pure white background -->
+      <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-[#0a2540] leading-tight">
+        Seu Ar-Condicionado com <br>
+        <span class="text-[#0066cc]">Eficiência Máxima e Ar Limpo</span>
+      </h2>
+
+      <p class="text-slate-600 text-base max-w-xl mx-auto leading-relaxed">
+        Não passe calor nem pague conta de luz cara à toa. Entre em contato direto pelo WhatsApp com a Gui Climatização e resolva hoje mesmo!
+      </p>
+
+      <!-- ALL BUTTONS ORANGE -->
+      <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://wa.me/5577991573470?text=Ol%C3%A1%2C%20Gui%20Climatiza%C3%A7%C3%A3o!%20Gostaria%20de%20solicitar%20um%20agendamento." target="_blank"
+           class="w-full sm:w-auto px-8 py-4 rounded-xl btn-orange font-black text-base shadow-xl">
+          <i data-lucide="message-circle" class="w-5 h-5"></i>
+          <span>Falar no WhatsApp: (77) 99157-3470</span>
+        </a>
+
+        <a href="#agendamento"
+           class="w-full sm:w-auto px-8 py-4 rounded-xl btn-orange-outline text-base font-black">
+          <i data-lucide="calendar" class="w-5 h-5"></i>
+          <span>Preencher Agendamento Online</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Clean Minimalist Footer (White Background, Dark Blue Text, Blue Links) -->
+  <footer class="bg-white border-t border-slate-200 text-slate-600 text-xs py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+        
+        <!-- Col 1: Brand -->
+        <div class="space-y-3">
+          <img src="assets/images/logo.png" alt="Gui Climatização" class="footer-logo-img" style="height: 56px; max-height: 56px; width: auto;">
+          <p class="text-xs text-slate-500 leading-relaxed">
+            Gui Climatização — Refrigeração e Soluções Técnicas. Especialista em ar-condicionado, higienização profissional e câmaras frias.
+          </p>
+          <div class="text-[11px] font-black text-[#0066cc] flex items-center gap-1">
+            <i data-lucide="award" class="w-4 h-4 text-[#ff6a00]"></i>
+            Mais de 20 anos de experiência
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div class="space-y-2.5">
+          <div class="text-sm font-black text-[#0a2540] uppercase tracking-wider">Navegação</div>
+          <ul class="space-y-2 font-medium">
+            <li><a href="#inicio" class="hover:text-brand-blue transition-colors">Início</a></li>
+            <li><a href="#servicos" class="hover:text-brand-blue transition-colors">Serviços Especializados</a></li>
+            <li><a href="#camaras-frias" class="hover:text-brand-blue transition-colors">Câmaras Frias &amp; Agro</a></li>
+            <li><a href="#higienizacao" class="hover:text-brand-blue transition-colors">Higienização Profissional</a></li>
+            <li><a href="#calculadora" class="hover:text-brand-blue transition-colors">Calculadora de BTUs</a></li>
+            <li><a href="#agendamento" class="hover:text-brand-blue transition-colors">Agendamento Online</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Regions -->
+        <div class="space-y-2.5">
+          <div class="text-sm font-black text-[#0a2540] uppercase tracking-wider">Regiões Atendidas</div>
+          <ul class="space-y-2 font-medium">
+            <li class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#ff6a00]"></i> Ibipitanga e Região (Bahia)</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#ff6a00]"></i> Primavera do Leste - MT</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#0066cc]"></i> Macaúbas &amp; Boquira</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#0066cc]"></i> Rio do Pires &amp; Cidades Vizinhas</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#0066cc]"></i> Fazendas &amp; Armazéns Rurais</li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Direct Contacts -->
+        <div class="space-y-2.5">
+          <div class="text-sm font-black text-[#0a2540] uppercase tracking-wider">Contatos Diretos</div>
+          <div class="space-y-2">
+            <a href="https://wa.me/5577991573470" target="_blank" class="flex items-center gap-2 text-[#ff6a00] font-black hover:underline">
+              <i data-lucide="message-circle" class="w-4 h-4"></i> (77) 99157-3470 (WhatsApp)
+            </a>
+            <a href="tel:5566992115059" class="flex items-center gap-2 text-[#0a2540] hover:text-brand-blue font-bold">
+              <i data-lucide="phone" class="w-4 h-4 text-[#0066cc]"></i> (66) 99211-5059 (Suporte)
+            </a>
+            <div class="text-slate-500 flex items-start gap-1.5 pt-1">
+              <i data-lucide="map-pin" class="w-4 h-4 text-[#ff6a00] shrink-0 mt-0.5"></i>
+              <span>R. Tapuirí, 103 - Jardim Bela Vista, Primavera do Leste - MT</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
+        <div>
+          &copy; <span id="current-year">2026</span> Gui Climatização. Todos os direitos reservados.
+        </div>
+        <div class="flex items-center gap-4">
+          <span class="text-[#0a2540] font-bold">Refrigeração &amp; Soluções Técnicas</span>
+          <span>•</span>
+          <a href="#inicio" class="text-[#0066cc] font-bold hover:underline">Voltar ao Topo &uarr;</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Action Button (Orange with White Icon & Orange Pulse) -->
+  <div class="fixed bottom-6 right-6 z-50 flex items-center gap-3">
+    <!-- Pop-up Bubble Tooltip -->
+    <a href="https://wa.me/5577991573470?text=Ol%C3%A1%2C%20Gui%20Climatiza%C3%A7%C3%A3o!%20Gostaria%20de%20um%20or%C3%A7amento." target="_blank"
+       class="hidden sm:flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-white border border-slate-200 shadow-xl text-xs font-black text-[#0a2540] hover:bg-slate-50 transition-all">
+      <span class="w-2 h-2 rounded-full bg-[#ff6a00] animate-ping"></span>
+      <span>Agendar no WhatsApp</span>
+    </a>
+
+    <!-- Big Round Orange Button -->
+    <a href="https://wa.me/5577991573470?text=Ol%C3%A1%2C%20Gui%20Climatiza%C3%A7%C3%A3o!%20Gostaria%20de%20um%20or%C3%A7amento." target="_blank"
+       aria-label="Falar no WhatsApp com o Gui Climatização"
+       class="w-14 h-14 rounded-full btn-orange text-white flex items-center justify-center shadow-2xl btn-orange-pulse transform hover:scale-110 transition-all p-0">
+      <i data-lucide="message-circle" class="w-7 h-7"></i>
+    </a>
+  </div>
+
+  <!-- Main JavaScript -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Auto initialize Lucide Icons -->
+  <script>
+    lucide.createIcons();
+    const yearEl = document.getElementById('current-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

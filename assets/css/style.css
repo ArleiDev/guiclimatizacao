@@ -1,0 +1,274 @@
+/* ==========================================================================
+   GUI CLIMATIZAÇÃO - DESIGN SYSTEM RESTRITO
+   Cores: Apenas Azul (#0066cc), Azul Mais Escuro (#0a2540), Branco (#ffffff)
+   Botões: Laranja Vibrante (#ff6a00 / #ff5500)
+   Fundo: 100% Branco Puro (#ffffff)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary-blue: #0066cc;
+  --primary-blue-hover: #0052a3;
+  --primary-blue-dark: #0a2540;
+  --primary-blue-deep: #06182c;
+  --primary-blue-light: #f0f7ff;
+  --primary-blue-subtle: #e6f2fd;
+  
+  --brand-orange: #ff6a00;
+  --brand-orange-hover: #e65c00;
+  --brand-orange-dark: #cc5200;
+  --brand-orange-light: #fff5eb;
+  
+  --bg-white: #ffffff;
+  --text-dark: #0a2540;
+  --text-body: #334155;
+  --text-muted: #64748b;
+  
+  --border-light: #e2e8f0;
+  --border-blue: #bfdbfe;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text-dark);
+  background-color: #ffffff;
+}
+
+body {
+  background-color: #ffffff;
+  color: var(--text-dark);
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: 'Outfit', sans-serif;
+  color: var(--primary-blue-dark);
+}
+
+/* Tamanho fixo e proporcional para o Logo */
+.nav-logo-img {
+  height: 50px !important;
+  max-height: 50px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+.footer-logo-img {
+  height: 56px !important;
+  max-height: 56px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-blue);
+}
+
+/* BOTÕES LARANJA OBRIGATÓRIOS */
+.btn-orange {
+  background-color: #ff6a00 !important;
+  background-image: linear-gradient(135deg, #ff7a00 0%, #ff5500 100%) !important;
+  color: #ffffff !important;
+  font-weight: 800;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px 0 rgba(255, 106, 0, 0.35);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.btn-orange:hover {
+  background-color: #e65c00 !important;
+  background-image: linear-gradient(135deg, #f56800 0%, #e64a00 100%) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px 0 rgba(255, 106, 0, 0.45);
+}
+
+.btn-orange-outline {
+  background-color: #ffffff !important;
+  color: #ff6a00 !important;
+  border: 2px solid #ff6a00 !important;
+  font-weight: 800;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.btn-orange-outline:hover {
+  background-color: #fff5eb !important;
+  border-color: #e65c00 !important;
+  color: #e65c00 !important;
+  transform: translateY(-2px);
+}
+
+/* Floating WhatsApp Orange Pulse */
+@keyframes orangePulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 106, 0, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 16px rgba(255, 106, 0, 0);
+  }
+}
+
+.btn-orange-pulse {
+  animation: orangePulseGlow 2.5s infinite;
+}
+
+/* NAVBAR 100% SÓLIDA E BRANCA (SEM TRANSPARÊNCIA AO ROLAR) */
+.navbar-solid-white {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px -2px rgba(10, 37, 64, 0.08);
+}
+
+/* Links do menu com espaçamento correto e sem quebra */
+.nav-menu-link {
+  white-space: nowrap;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #0a2540;
+  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.nav-menu-link:hover {
+  color: #0066cc;
+}
+
+/* Hero AC Seamless Floating Image (Sem Card) */
+.hero-ac-visual {
+  position: relative;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-ac-visual img {
+  mix-blend-mode: multiply;
+  filter: drop-shadow(0 20px 30px rgba(0, 102, 204, 0.12));
+  transition: transform 0.5s ease;
+}
+
+.hero-ac-visual:hover img {
+  transform: scale(1.03) translateY(-4px);
+}
+
+/* Hero Panoramic Bright Background */
+.hero-bg-section {
+  background-color: #ffffff;
+  background-image: url('../images/hero-bg.jpg');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .hero-bg-section {
+    background-position: 75% center;
+  }
+}
+
+/* White Clean Cards */
+.clean-white-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 16px -2px rgba(10, 37, 64, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.clean-white-card:hover {
+  transform: translateY(-4px);
+  border-color: #93c5fd;
+  box-shadow: 0 16px 32px -4px rgba(0, 102, 204, 0.1), 0 4px 12px -2px rgba(10, 37, 64, 0.04);
+}
+
+/* Range input styling em Azul com Marcador Laranja */
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  background: #e2e8f0;
+  height: 8px;
+  border-radius: 4px;
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ff6a00;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(255, 106, 0, 0.5);
+  border: 2px solid #ffffff;
+  transition: transform 0.1s ease;
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+  transform: scale(1.18);
+  background: #e65c00;
+}
+
+/* FAQ Accordion */
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-out, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.faq-item.active .faq-content {
+  max-height: 350px;
+  opacity: 1;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+  color: #ff6a00;
+}
+
+/* Floating animation */
+@keyframes floatSubtle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: floatSubtle 4s ease-in-out infinite;
+}
